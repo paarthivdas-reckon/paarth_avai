@@ -1,0 +1,11 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:latest
+    ports:
+      - "6379:6379"   # database
+      - "3001:3000"   # FalkorDB browser UI (optional)
+    volumes:
+      - falkordb-data:/var/lib/falkordb/data
+    restart: unless-stopped
+volumes:
+  falkordb-data:
